@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+    <body>
+    <h1>Оголошення</h1>
+    {% for i in adv_list %}
+        <div>
+            <h2>{{ i.title }}</h2>
+            <p>{{ i.content }}</p>
+            <p>{{ i.price }}</p>
+            <p>{{ i.published|date:"d.m.Y H:i:s" }}</p>
+        </div>
+    {% endfor %}
+    </body>
+</html>
