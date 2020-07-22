@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title{{ current_rubric.name }} - Доска обьявлений</title>
+    </head>
+    <body>
+        <h1>Обьявления</h1>
+        <h2>Рубоика: {{ current_rubric.name }}</h2>
+        <div>
+            <a href="/advist/">Главная</a>
+            {% for i in rubrics %}
+            <a href="/advist/{{ i.pk }}/{{ i.name }}"</a>
+            {% endfor %}
+        </div>
+        {% for i in adv_list %}
+        <div>
+            <h2>{{ i.title }}</h2>
+            <p>{{ i.content }}</p>
+            <p>{{ i.published|date:"d.m.Y H:i:s" }}</p>
+        </div>
+        {% endfor %}
+    </body>
+</html>
